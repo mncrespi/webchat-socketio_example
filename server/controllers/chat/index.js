@@ -24,6 +24,10 @@ function index(req, res) {
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+    </script>
   </body>
 </html>`
 
