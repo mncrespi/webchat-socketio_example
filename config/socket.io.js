@@ -7,6 +7,16 @@ export default function (server) {
 
   io.on('connection', (socket) => {
     logger.log('debug', 'a user connected')
+
+    // Event for User disconnect
+    socket.on('disconnect', () => {
+      logger.log('debug', 'user disconnected')
+    })
+
+    // Event for New Messages
+    socket.on('chat message', (msg) => {
+      logger.log('debug', 'message: ' + msg)
+    })
   })
 
   io.on('error', (err) => {
