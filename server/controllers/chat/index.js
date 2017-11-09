@@ -21,9 +21,6 @@ function index(req, res) {
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io();
-    </script>
-    <script>
       $(function () {
         var socket = io();
         
