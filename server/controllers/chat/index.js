@@ -26,10 +26,17 @@ function index(req, res) {
     <script>
       $(function () {
         var socket = io();
+        
+        // Send Messages to Server
         $('form').submit(function(){
-          socket.emit('chat message', $('#m').val());
+          socket.emit('chatMessage', $('#m').val());
           $('#m').val('');
           return false;
+        });
+        
+        // Get Messages from Server
+        socket.on('chatMessage', function(msg){
+          $('#messages').append($('<li>').text(msg));
         });
       });
     </script>

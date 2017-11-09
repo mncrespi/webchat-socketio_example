@@ -14,8 +14,10 @@ export default function (server) {
     })
 
     // Event for New Messages
-    socket.on('chat message', (msg) => {
+    socket.on('chatMessage', (msg) => {
       logger.log('debug', 'message: ' + msg)
+      // Broadcasting
+      io.emit('chatMessage', msg)
     })
   })
 
