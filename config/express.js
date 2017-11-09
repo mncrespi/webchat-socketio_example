@@ -17,26 +17,6 @@ import winstonInstance                from './winston'
 const app = express()
 
 
-
-// Set And Instance SocketIO
-import http                           from 'http'  // eslint-disable-line
-import socketIO                       from 'socket.io'  // eslint-disable-line
-const io = socketIO(http.Server(app))  // eslint-disable-line
-
-io.on('connection', (socket) => {
-  console.log('a user connected') // eslint-disable-line
-})
-
-io.on('error', (err) => {
-  console.log('socketIO Error: ', err) // eslint-disable-line
-})
-
-app.use(express.static('public'))
-app.use('/public', express.static('public'))
-
-
-
-
 if (config.env === 'development') {
   app.use(logger('dev'))
 }
